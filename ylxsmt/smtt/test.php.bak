@@ -1,0 +1,8 @@
+　<?php
+	require ("main.php");
+	$tpl->assign("title", "测试用的网页标题");
+	$tpl->assign("content", "测试用的网页内容");
+	$tpl->assign("ttttt","你妹啊啊啊");
+	$tpl->display('test.htm');
+	
+	?>

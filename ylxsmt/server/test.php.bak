@@ -1,0 +1,9 @@
+　<?php
+	require ("main.php");
+	$tpl=new Smarty();
+	for($i=0;$i<10;$i++)
+	{
+		$tpl->assign("content", array('num'+$i=>$i));
+	}
+	$tpl->display("test.htm");
+	?>

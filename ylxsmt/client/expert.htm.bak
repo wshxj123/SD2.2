@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="utf-8">
+    <title>门诊系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet"> 
+	<script type="text/javascript">
+	loadrec(1);
+	function changeclass(text)
+	{
+		clas=text;
+		//alert(clas);
+		loadrec(clas);	
+	}
+	
+	//window.setInterval('loadrec(clas)',1000);
+	function loadrec(clas)
+	{
+		var xmlhttp;
+		var type=clas;
+		if (window.XMLHttpRequest)
+		{// code for IE7+, Firefox, Chrome, Opera, Safari
+			xmlhttp=new XMLHttpRequest();
+		  }
+		else
+		  {// code for IE6, IE5
+		  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		  }
+		xmlhttp.onreadystatechange=function()
+		  {
+		  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+			{
+				var rec=xmlhttp.responseText;
+				res=new Array;
+				res=rec.split("|");
+				
+				for(i=0;i<res.length;i++)
+				{
+					res[i]=res[i]*1;
+					var div = document.getElementById(res[i]);
+					div.setAttribute("class", "media well"); 
+				
+				}
+			}
+		  }
+		xmlhttp.open("POST","../server/rec.php",true);
+		xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+		xmlhttp.send("type="+type);
+	}
+
+	
+	</script>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+
+  </head>
+
+  <body>
+
+	<div id="Mec-Modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel">药剂师登录</h3>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" action="../server/index.php" method="POST">
+				<div class="control-group">
+					 <label class="control-label">用 户</label>
+					<div class="controls">
+						<input id="inputName" type="text" name="name"/>
+					</div>
+				</div>
+				<div class="control-group">
+					 <label class="control-label">密 码</label>
+					<div class="controls">
+						<input id="inputPassword" type="password" name="passwd"/>
+					</div>
+				</div>
+				<input type=hidden name="type" value="3">
+				<div class="control-group">
+					<div class="controls">
+						 <label class="checkbox"><input type="checkbox" /> Remember me</label> <button type="submit" class="btn" onclick="getIn()">登陆</button>
+					</div>
+				</div>
+			</form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+        </div>
+
+		<div id="Exo-Modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel">专家登录</h3>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" action="../server/index.php" method="POST">
+				<div class="control-group">
+					 <label class="control-label">用 户</label>
+					<div class="controls">
+						<input id="inputName" type="text" name="name"/>
+					</div>
+				</div>
+				<div class="control-group">
+					 <label class="control-label">密 码</label>
+					<div class="controls">
+						<input id="inputPassword" type="password" name="passwd"/>
+					</div>
+				</div>
+				<input type=hidden name="type" value="4">
+				<div class="control-group">
+					<div class="controls">
+						 <label class="checkbox"><input type="checkbox" /> Remember me</label> <button type="submit" class="btn" onclick="getIn()">登陆</button>
+					</div>
+				</div>
+			</form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+        </div>
+
+		<div id="Admin-Modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel">医师登录</h3>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" action="../server/index.php" method="POST">
+				<div class="control-group">
+					 <label class="control-label">用 户</label>
+					<div class="controls">
+						<input id="inputName" type="text" name="name"/>
+					</div>
+				</div>
+				<div class="control-group">
+					 <label class="control-label">密 码</label>
+					<div class="controls">
+						<input id="inputPassword" type="password" name="passwd"/>
+					</div>
+				</div>
+				<input type=hidden name="type" value="2">
+				<div class="control-group">
+					<div class="controls">
+						 <label class="checkbox"><input type="checkbox" /> Remember me</label> <button type="submit" class="btn" onclick="getIn()">登陆</button>
+					</div>
+				</div>
+			</form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                
+            </div>
+        </div>
+
+		<div id="About-Modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel">关于</h3>
+				<img src="img/lika2.jpg" class="img-circle">
+					<font face="微软雅黑" size="4">made by gxcissad.</font>
+            </div>
+            <div class="modal-body">
+				
+				<div><?//TODO?></div>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                
+            </div>
+        </div>
+
+		<div id="Score-Modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel">服务质量评分</h3>
+				
+				<div class="modal-body">
+					<form class="form-horizontal" action="../server/score.php" method="POST">
+					<div class="control-group">
+						 <br/><label class="control-label">就诊号码</label>
+						<div class="controls">
+							<input id="id" type="text" name="id"/>
+						</div>
+					</div>
+					<div class="control-group">
+						 <label class="control-label">评&nbsp&nbsp&nbsp&nbsp分</label>
+						<div class="controls">
+							<input id="inputScore" type="range" min="1" max="10" name="score"/> 10分
+						</div>
+					</div>
+					<div class="control-group">
+						<div class="controls">
+							 <button type="submit" class="btn" onclick="getIn()">提交</button>
+						</div>
+					</div>
+					</form>
+				</div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                
+            </div>
+        </div>
+
+		<div id="Register-Modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel">挂号</h3>
+            </div>
+            <div class="modal-body">
+				
+				<form class="form-horizontal" action="../server/index.php" method="POST">
+				  <div class="control-group">
+					 <label class="control-label">名&nbsp&nbsp&nbsp&nbsp字</label>
+					<div class="controls">
+						<input type="text" name="name"/>
+					</div>
+				</div>
+				 <div class="control-group">
+					 <label class="control-label">手机号码</label>
+					<div class="controls">
+						<input  type="text" name="phone"/>
+					</div>
+				</div>
+				 <div class="control-group">
+					 <label class="control-label">身份证号</label>
+					<div class="controls">
+						<input type="text" name="id"/>
+					</div>
+				</div>
+				<div class="control-group">
+					 <label class="control-label">年&nbsp&nbsp&nbsp&nbsp龄</label>
+					<div class="controls">
+						<input type="number" name="age"/>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label">科&nbsp&nbsp&nbsp&nbsp目</label>
+					<div class="controls">
+						<select name="class" class="selectpicker show-tick" data-size="6" value="">
+							<option></option>
+							<option value="0">X0科</option>
+							<option value="2">X1科</option>
+							<option value="3">X2科</option>
+							<option value="4">X3科</option>
+							<option value="5">X4科</option>
+							<option value="6">X5科</option>
+						</select>
+					</div>
+				</div>
+				<input type=hidden name="type" value="1">
+					
+				 <div class="control-group">
+					<div class="controls">
+						<button type="submit" class="btn" onclick="getIn()">提交</button>
+					</div>
+				</div>
+				</form>
+					
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                
+            </div>
+        </div>
+
+    <!-- NAVBAR
+    ================================================== -->
+    <div class="navbar-wrapper">
+      <!-- Wrap the .navbar in .container to center it within the absolutely positioned parent. -->
+      <div class="container">
+
+        <div class="navbar navbar-inverse">
+          <div class="navbar-inner">
+            <!-- Responsive Navbar Part 1: Button for triggering responsive navbar (not covered in tutorial). Include responsive CSS to utilize. -->
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="brand" href="#">门诊系统</a>
+            <!-- Responsive Navbar Part 2: Place all navbar contents you want collapsed withing .navbar-collapse.collapse. -->
+            <div class="nav-collapse collapse">
+              <ul class="nav">
+                <li><a href="index.htm">主页</a></li>
+				<li><a href="#Register-Modal" data-toggle="modal">挂号</a></li>
+				<li class="active"><a href="expert.htm">专家预约</a></li>
+				<li><a href="#Score-Modal" data-toggle="modal">服务评分</a></li>
+                <!-- Read about Bootstrap dropdowns at http://twbs.github.com/bootstrap/javascript.html#dropdowns -->
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">登陆 <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li>  <a class="btn" href="#Mec-Modal" role="button" class="btn" data-toggle="modal">药剂师登陆</a></li>
+                    <li class="divider"></li>
+                    <li> <a class="btn" href="#Admin-Modal" role="button" class="btn" data-toggle="modal">医师登陆</a></li>
+					<li class="divider"></li>
+					 <li> <a class="btn" href="#Exo-Modal" role="button" class="btn" data-toggle="modal">专家登陆</a></li>
+                  </ul>
+                </li>
+				<li><a href="#About-Modal" data-toggle="modal">关于</a></li>
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div><!-- /.navbar-inner -->
+        </div><!-- /.navbar -->
+
+      </div> <!-- /.container -->
+    </div><!-- /.navbar-wrapper -->
+	
+	<div class="container-fluid">
+		<div class="row-fluid">
+			<div class="span12">
+				<ul class="thumbnails">
+					<li class="span4">
+						<div class="thumbnail">
+							<!--<img alt="300x200" src="img/lika4.jpg" />-->
+							<div class="caption">
+								<h3>
+									冯诺尔曼结构
+								</h3>
+								<p>
+									也称普林斯顿结构，是一种将程序指令存储器和数据存储器合并在一起的存储器结构。程序指令存储地址和数据存储地址指向同一个存储器的不同物理位置。
+								</p>
+								<p>
+									<a class="btn btn-primary" href="#">浏览</a> <a class="btn" href="#">分享</a>
+								</p>
+							</div>
+						</div>
+					</li>
+					<li class="span4">
+						<div class="thumbnail">
+							<!--<img alt="300x200" src="img/lika3.jpg" />-->
+							<div class="caption">
+								<h3>
+									哈佛结构
+								</h3>
+								<p>
+									哈佛结构是一种将程序指令存储和数据存储分开的存储器结构，它的主要特点是将程序和数据存储在不同的存储空间中，进行独立编址。
+								</p>
+								<p>
+									<a class="btn btn-primary" href="#">浏览</a> <a class="btn" href="#">分享</a>
+								</p>
+							</div>
+						</div>
+					</li>
+					<li class="span4">
+						<div class="thumbnail">
+							<!--<img alt="300x200" src="img/lika5.jpg" />-->
+							<div class="caption">
+								<h3>
+									改进型哈佛结构
+								</h3>
+								<p>
+									改进型的哈佛结构具有一条独立的地址总线和一条独立的数据总线，两条总线由程序存储器和数据存储器分时复用，使结构更紧凑。
+								</p>
+								<p>
+									<a class="btn btn-primary" href="#">浏览</a> <a class="btn" href="#">分享</a>
+								</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="row-fluid">
+			<div class="span12">
+				<div class="tabbable tabs-left" id="tabs-966809">
+					<ul class="nav nav-tabs">
+						<li class="active">
+							<a href="#panel-1" data-toggle="tab" onclick="changeclass('1')">中二病无药可救科</a>
+						</li>
+						<li>
+							<a href="#panel-2" data-toggle="tab" onclick="changeclass('2')">X2科</a>
+						</li>
+						<li>
+							<a href="#panel-3" data-toggle="tab" onclick="changeclass('3')">X3科</a>
+						</li>
+						<li>
+							<a href="#panel-4" data-toggle="tab" onclick="changeclass('4')">X4科</a>
+						</li>
+						<li>
+							<a href="#panel-5" data-toggle="tab" onclick="changeclass('5')">X5科</a>
+						</li>
+						<li>
+							<a href="#panel-6" data-toggle="tab" onclick="changeclass('6')">X6科</a>
+						</li>
+						<li>
+							<a href="#panel-7" data-toggle="tab" onclick="changeclass('7')">X7科</a>
+						</li>
+						<li>
+							<a href="#panel-8" data-toggle="tab" onclick="changeclass('8')">X8科</a>
+						</li>
+						<li>
+							<a href="#panel-9" data-toggle="tab" onclick="changeclass('9')">X9科</a>
+						</li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active" id="panel-1">
+							
+							<form method="POST" action="../server/appo.php">
+							<div class="media" id="1"><a class="pull-left" href="#"><img class="media-object" src="img/0.jpg" /> </a>
+							<div class="media-body" contenteditable="true">
+							<h4 class="media-heading">小鸟游一花</h4>
+							专治十花.</div>
+							<input type="hidden" name="name" value="1">
+							<button class="btn btn-primary" type="submit">预约</button>
+							</div></form>
+
+							<form method="POST" action="../server/appo.php">
+							<div class="media" id="2"><a class="pull-left" href="#"><img class="media-object" src="img/3.jpg" /> </a>
+							<div class="media-body" contenteditable="true">
+							<h4 class="media-heading">小鸟游二花</h4>
+							专治勇太.</div>
+								<input type="hidden" name="name" value="2">
+								<button class="btn btn-primary" type="submit" >预约</button>
+							</div></form>		
+
+							<form method="POST" action="../server/appo.php">
+							<div class="media" id="3"><a class="pull-left" href="#"><img class="media-object" src="img/4.jpg" /> </a>
+							<div class="media-body" contenteditable="true">
+							<h4 class="media-heading">小鸟游三花</h4>
+							转治中二病.</div>
+							<input type="hidden" name="name" value="3">
+							<button class="btn btn-primary" type="submit">预约</button>
+							</div></form>
+
+
+						</div>
+						<div class="tab-pane" id="panel-2">
+							<p>
+								第二部分内容.
+							</p>
+						</div>
+						<div class="tab-pane" id="panel-3">
+							<p>
+								第三部分内容.
+							</p>
+						</div>
+						<div class="tab-pane" id="panel-4">
+							<p>
+								第四部分内容.
+							</p>
+						</div>
+						<div class="tab-pane" id="panel-5">
+							<p>
+								第五部分内容.
+							</p>
+						</div>
+						<div class="tab-pane" id="panel-6">
+							<p>
+								第六部分内容.
+							</p>
+						</div>
+						<div class="tab-pane" id="panel-7">
+							<p>
+								第七部分内容.
+							</p>
+						</div>
+						<div class="tab-pane" id="panel-8">
+							<p>
+								第八部分内容.
+							</p>
+						</div>
+						<div class="tab-pane" id="panel-9">
+							<p>
+								第九部分内容.
+							</p>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="bootstrap/js/jquery.js"></script>
+    <script src="bootstrap/js/transition.js"></script>
+    <script src="bootstrap/js/alert.js"></script>
+    <script src="bootstrap/js/modal.js"></script>
+    <script src="bootstrap/js/dropdown.js"></script>
+    <script src="bootstrap/js/scrollspy.js"></script>
+    <script src="bootstrap/js/tab.js"></script>
+    <script src="bootstrap/js/tooltip.js"></script>
+    <script src="bootstrap/js/popover.js"></script>
+    <script src="bootstrap/js/button.js"></script>
+    <script src="bootstrap/js/collapse.js"></script>
+    <script src="bootstrap/js/carousel.js"></script>
+    <script src="bootstrap/js/typeahead.js"></script>
+	<script src="js/main.js"></script>
+    <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+    </script>
+    <script src="bootstrap/js/holder.js"></script>
+  </body>
+</html>
