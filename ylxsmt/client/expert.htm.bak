@@ -416,7 +416,7 @@
 							<div class="media-body" contenteditable="true">
 							<h4 class="media-heading">小鸟游一花</h4>
 							专治十花.</div>
-							<input type="hidden" name="name" value="1">
+							<input type="hidden" name="exid" value="1">
 							<button class="btn btn-primary" type="submit">预约</button>
 							</div></form>
 
@@ -425,7 +425,7 @@
 							<div class="media-body" contenteditable="true">
 							<h4 class="media-heading">小鸟游二花</h4>
 							专治勇太.</div>
-								<input type="hidden" name="name" value="2">
+								<input type="hidden" name="eid" value="2">
 								<button class="btn btn-primary" type="submit" >预约</button>
 							</div></form>		
 
@@ -434,7 +434,7 @@
 							<div class="media-body" contenteditable="true">
 							<h4 class="media-heading">小鸟游三花</h4>
 							转治中二病.</div>
-							<input type="hidden" name="name" value="3">
+							<input type="hidden" name="exid" value="3">
 							<button class="btn btn-primary" type="submit">预约</button>
 							</div></form>
 

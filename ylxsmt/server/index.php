@@ -1,5 +1,5 @@
-	<?
-							session_start();;
+﻿	<?
+							session_start();
 
 							include ("conn.php");
 							
@@ -48,6 +48,12 @@
 								{ 
 									echo "挂号失败!";
 								}
+								
+								require ("main.php");
+								$tpl=new Smarty();
+								$tpl->assign("name", "$name");
+								$tpl->display("patient.htm");
+								
 							}
 
 							else if($intype==2)  //医师
@@ -98,7 +104,7 @@
 								else
 								{ 
 									echo "error!";
-									echo "返回<a href='../client'>登陆</a>";
+									echo "返回<a href='../client'>登录</a>";
 									exit();
 								}
 								
@@ -151,7 +157,7 @@
 								else
 								{ 
 									echo "error!";
-									echo "返回<a href='../client'>登陆</a>";
+									echo "返回<a href='../client'>登录</a>";
 									exit();
 								}
 								require ("main.php");
@@ -201,7 +207,7 @@
 								else
 								{ 
 									echo "error!";
-									echo "返回<a href='../client'>登陆</a>";
+									echo "返回<a href='../client'>登录</a>";
 									exit();
 								}
 								require ("main.php");

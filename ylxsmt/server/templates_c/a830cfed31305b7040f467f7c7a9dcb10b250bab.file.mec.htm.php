@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2013-11-07 12:40:34
+<?php /* Smarty version Smarty-3.1.15, created on 2013-11-12 16:26:10
          compiled from ".\templates\mec.htm" */ ?>
 <?php /*%%SmartyHeaderCode:25866527b8a42d751a6-97884175%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'a830cfed31305b7040f467f7c7a9dcb10b250bab' => 
     array (
       0 => '.\\templates\\mec.htm',
-      1 => 1383828029,
+      1 => 1384267030,
       2 => 'file',
     ),
   ),
@@ -15,20 +15,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.15',
+  'unifunc' => 'content_527b8a42de0dc0_42404214',
   'variables' => 
   array (
     'name' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_527b8a42de0dc0_42404214',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_527b8a42de0dc0_42404214')) {function content_527b8a42de0dc0_42404214($_smarty_tpl) {?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-		<title>��ҩ</title>
+		<title>开药</title>
 		<link rel="stylesheet" href="css/960.css" type="text/css" media="screen" charset="utf-8" />
 		<!--<link rel="stylesheet" href="css/fluid.css" type="text/css" media="screen" charset="utf-8" />-->
 		<link rel="stylesheet" href="css/template.css" type="text/css" media="screen" charset="utf-8" />
@@ -44,7 +44,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 			<div id="content" class="container_16 clearfix">
 				<div class="grid_16">
 					<h2>welcome back <?php echo $_smarty_tpl->tpl_vars['name']->value;?>
- ҽʦ</h2>
+ 医师</h2>
 					<p class="error">Something went wronk.</p>
 				</div>
 

@@ -194,7 +194,7 @@
 								if($query && $res) 
 								{
 									//echo"success!"; 
-									echo "welcome back .专家.".$name;
+									//echo "welcome back .专家.".$name;
 									
 									include("expert.php");
 								}

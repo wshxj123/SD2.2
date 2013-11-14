@@ -15,7 +15,7 @@ function exit()
 		if (xmlhttpexit.readyState==4 && xmlhttpexit.status==200)
 		{
 			alert(xmlhttpexit.responseText);
-			location.href='../client/index.php';
+			location.href='../client/index.htm';
 		}
 	}
 	xmlhttpexit.open("POST","exit.php",true);

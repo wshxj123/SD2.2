@@ -1,29 +1,29 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2013-11-12 16:27:14
-         compiled from ".\templates\doc.htm" */ ?>
-<?php /*%%SmartyHeaderCode:7039527b79bb0fdde7-69792813%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.15, created on 2013-11-14 11:57:00
+         compiled from ".\templates\patient.htm" */ ?>
+<?php /*%%SmartyHeaderCode:31042528393f5d916f4-18580453%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '4bf8a499f5ce844fc4b4741dea24c162fd4efb8b' => 
+    '967bb1f6513f53081f5d1965ad1b30b85967b865' => 
     array (
-      0 => '.\\templates\\doc.htm',
-      1 => 1384267030,
+      0 => '.\\templates\\patient.htm',
+      1 => 1384355500,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '7039527b79bb0fdde7-69792813',
+  'nocache_hash' => '31042528393f5d916f4-18580453',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.15',
-  'unifunc' => 'content_527b79bb15f2c4_07974161',
+  'unifunc' => 'content_528393f61bf5e7_77415302',
   'variables' => 
   array (
     'name' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_527b79bb15f2c4_07974161')) {function content_527b79bb15f2c4_07974161($_smarty_tpl) {?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+<?php if ($_valid && !is_callable('content_528393f61bf5e7_77415302')) {function content_528393f61bf5e7_77415302($_smarty_tpl) {?>﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
@@ -56,7 +56,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 		
 		<ul id="navigation">
 			<li><span class="active">主页</span></li>
-			<li><a href='medicine.php' id='mec'>开药</a></li>
 			<li><a href='#'  onclick='exit()' id='mec'>退出</a></li>
 		</ul>
 		<div id="content" class="container_16 clearfix">

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.15, created on 2013-11-12 10:39:19
+<?php /* Smarty version Smarty-3.1.15, created on 2013-11-12 16:13:15
          compiled from ".\templates\appo.htm" */ ?>
 <?php /*%%SmartyHeaderCode:36945280e11ca24fe3-09557804%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'c9da2b227df297a2fc7699565199994cf8703da9' => 
     array (
       0 => '.\\templates\\appo.htm',
-      1 => 1384181888,
+      1 => 1384267030,
       2 => 'file',
     ),
   ),
@@ -17,6 +17,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'version' => 'Smarty-3.1.15',
   'unifunc' => 'content_5280e11cab8bd7_65172922',
+  'variables' => 
+  array (
+    'eid' => 0,
+  ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5280e11cab8bd7_65172922')) {function content_5280e11cab8bd7_65172922($_smarty_tpl) {?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -100,11 +104,31 @@ $(function() {
 	  
 })
 
+	var today=new Date();
+	var tmp=today.getDate()-1;
 	function c(day,to)
 	{
+		//alert(tmp);
 		if(day-to<7 && day-to>0)
 		{
-			alert("OK!");
+			var div=document.getElementById(day);
+			var ori=document.getElementById(tmp);
+			if(day!=to)
+			{
+				if(div.className=="month-cell pink")
+				{
+					div.className="month-cell pink red";
+					ori.className="month-cell pink";
+					tmp=day;
+				}
+				else
+				{
+					div.className="month-cell pink";
+				}
+			}
+
+			var da=document.getElementsByName("date");
+			da[0].value=day;
 		}
 	}
 	
@@ -120,6 +144,24 @@ $(function() {
 			<li><a href="#">News</a></li>
 			<li><a href="#">Users</a></li>
 		</ul>
+		<div id="content" class="container_16 clearfix">
+			<div class="grid_5">
+					<form method="POST" action="appoi.php">
+						<label>姓名</label>
+							<input type="text" name="name"/>
+						<label>身份证</label>
+							<input type="text" name="id"/>
+						<label>手机号码</label>
+							<input type="text" name="phone"/>
+						<label>年龄</label>
+							<input type="text" name="age"/>
+						<input type="hidden" value="0" name=date>
+						<input type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['eid']->value;?>
+" name=eid>
+						<input type="submit">
+						<label>!:最多只能提前七天预约专家</label>
+					</form>
+				</div>
 			<div class="month-container">
 						  <div class="month-head"><span></span></div>
 						  <ul class="month-body">
@@ -131,8 +173,8 @@ $(function() {
 						  <div class="month-cell blue"><span>五</span></div>      
 						  <div class="month-cell blue"><span>六</span></div>
 						  </ul>
-						  <div class="clear"></div>
+				<div class="clear">
 			</div>
-				
+	</div>
 	</body>
 </html><?php }} ?>

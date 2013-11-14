@@ -79,11 +79,35 @@ $(function() {
 	  
 })
 
+	var today=new Date();
+	var tmp=today.getDate()-1;
 	function c(day,to)
 	{
+		//alert(tmp);
 		if(day-to<7 && day-to>0)
 		{
-			alert("OK!");
+			var div=document.getElementById(day);
+			var ori=document.getElementById(tmp);
+			if(day!=to)
+			{
+				if(div.className=="month-cell pink")
+				{
+					div.className="month-cell pink red";
+					ori.className="month-cell pink";
+					//alert(tmp);
+					//alert(day);
+					tmp=day;
+					//alert(tmp);
+					//alert(day);
+				}
+				else
+				{
+					div.className="month-cell pink";
+				}
+			}
+
+			var da=document.getElementsByName("date");
+			da[0].value=day;
 		}
 	}
 	
@@ -99,9 +123,24 @@ $(function() {
 			<li><a href="#">News</a></li>
 			<li><a href="#">Users</a></li>
 		</ul>
-
-	
-						<div class="month-container">
+		<div id="content" class="container_16 clearfix">
+			<div class="grid_5">
+					<form method="POST" action="appoi.php">
+						<label>姓名</label>
+							<input type="text" name="name"/>
+						<label>身份证</label>
+							<input type="text" name="id"/>
+						<label>手机号码</label>
+							<input type="text" name="phone"/>
+						<label>年龄</label>
+							<input type="text" name="age"/>
+						<input type="hidden" value="0" name=date>
+						<input type="hidden" value="{$eid}" name=eid>
+						<input type="submit">
+						<label>!:最多只能提前七天预约专家</label>
+					</form>
+				</div>
+			<div class="month-container">
 						  <div class="month-head"><span></span></div>
 						  <ul class="month-body">
 						  <div class="month-cell orange"><span>日</span></div>    
@@ -112,8 +151,8 @@ $(function() {
 						  <div class="month-cell blue"><span>五</span></div>      
 						  <div class="month-cell blue"><span>六</span></div>
 						  </ul>
-						  <div class="clear"></div>
-					</div>
-				
+				<div class="clear">
+			</div>
+	</div>
 	</body>
 </html>

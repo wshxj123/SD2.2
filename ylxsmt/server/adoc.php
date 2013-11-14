@@ -1,4 +1,4 @@
-<script src="../client/js/main.js"></script>
+﻿<script src="../client/js/main.js"></script>
 
 所长办公室
 <form class="form-horizontal" action="adoc.php" method="POST">
