@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>预约总览</title>
+		<link rel="stylesheet" href="css/960.css" type="text/css" media="screen" charset="utf-8" />
+		<link rel="stylesheet" href="css/template.css" type="text/css" media="screen" charset="utf-8" />
+		<link rel="stylesheet" href="css/colour.css" type="text/css" media="screen" charset="utf-8" />
+	</head>
+	<body>
+
+		<h1 id="head">行程总览</h1>
+
+		<ul id="navigation">
+			<li><span class="active">Overview</span></li>
+			<li><a href="back.php">返回</a></li>
+		</ul>
+		
+		<div id="content" class="container_16 clearfix">
+			
+			<table width="200" border="1">
+			<thead>
+							<tr>
+								<th>患者姓名</th>
+								<th>身份证</th>
+								<th>年龄</th>
+								<th>联系方式</th>
+								<th>预约日期</th>
+								<th colspan="2" width="10%">Actions</th>
+							</tr>
+						</thead>
+			  {section name=loop loop=count($News)}
+							<tr>
+							<td>{$News[loop].na}</td>
+							<td>{$News[loop].id}</td>
+							<td>{$News[loop].ag}</td>
+							<td>{$News[loop].phone}</td>
+							<td>{$News[loop].da}</td>
+
+							</tr>
+							{sectionelse}
+							对不起，没有任何病人信息！
+							{/section}	
+			</table>
+
+								
+
+
+
+		</div>
+
+			<div id="foot">
+				未来7天预约情况
+			</div>
+		
+	</body>
+</html>

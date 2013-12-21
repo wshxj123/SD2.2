@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>预约历史查询</title>
+		<link rel="stylesheet" href="css/960.css" type="text/css" media="screen" charset="utf-8" />
+		<link rel="stylesheet" href="css/template.css" type="text/css" media="screen" charset="utf-8" />
+		<link rel="stylesheet" href="css/colour.css" type="text/css" media="screen" charset="utf-8" />
+		<h1 id="head">预约历史查询</h1>
+
+		<ul id="navigation">
+			<li><span class="active">Overview</span></li>
+			<li><a href="user.php">返回</a></li>
+		</ul>
+		<div id="content" class="container_16 clearfix">
+		<label>亲爱的{$name}您好</label>	
+	</head>
+	<div class="grid_16">						
+					<table>
+						<thead>
+							<tr>
+								<th>专家姓名</th>
+								<th>预约时间</th>
+								<th colspan="2" width="10%">预约单号</th>
+							</tr>
+						</thead>
+						
+						<tbody>
+							
+							{section name=loop loop=count($News)}
+							<tr>
+							<td>{$News[loop].exna}</td>
+							<td>{$News[loop].time}</td>
+							<td>{$News[loop].order}</td>
+							
+							</tr>
+							{sectionelse}
+							对不起，没有预约信息！
+							{/section}
+						</tbody>
+					</table>
+	</div>
+</html>

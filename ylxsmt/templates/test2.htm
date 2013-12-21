@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>药剂师个人中心</title>
+		<link rel="stylesheet" href="css/960.css" type="text/css" media="screen" charset="utf-8" />
+		<link rel="stylesheet" href="css/template.css" type="text/css" media="screen" charset="utf-8" />
+		<link rel="stylesheet" href="css/colour.css" type="text/css" media="screen" charset="utf-8" />
+	</head>
+	<body>
+
+		<h1 id="head">药剂师个人中心</h1>
+
+		<ul id="navigation">
+			<li><span class="active">Overview</span></li>
+		</ul>
+		
+		<div id="content" class="container_16 clearfix">
+			<label>药剂师,{$name}你好</label>
+				<div class="grid_16">
+			
+					<table>
+						<thead>
+							<tr>
+								<th>药品iD</th>
+								<th>药品名称</th>
+								<th>数量</th>
+								<th>价格</th>
+								<th colspan="2" width="10%">备注</th>
+							</tr>
+						</thead>
+						
+						<tbody>
+							
+							{section name=loop loop=count($News)}
+							<tr>
+							<td>{$News[loop].id}</td>
+							<td>{$News[loop].name}</td>
+							<td>{$News[loop].price}</td>
+							<td>{$News[loop].num}</td>
+							<td>{$News[loop].test}</td>
+							{sectionelse}
+							对不起，没有任何药品信息！
+							{/section}
+							</tr>
+							
+						</tbody>
+					</table>
+					
+				</div>
+			</div>
+
+		</div>
+
+		
+	</body>
+</html>

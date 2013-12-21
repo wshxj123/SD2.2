@@ -1,0 +1,15 @@
+<html>
+<head><title>这是一个foreach使用的例子</title></head>
+<body>
+<br/>这里将输出一个数组：<br>
+<{section name=loop loop=count($News)}>
+病人身份证号码：<{$News[loop].id}>
+病人日期：<{$News[loop].da}>
+病人年龄：<{$News[loop].ag}>
+病人姓名：<{$News[loop].na}>
+病人电话：<{$News[loop].phone}><br><hr>
+<{sectionelse}>
+对不起，没有任何病人信息！
+<{/section}>
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿						
+					<td>就诊号：{$bid}</td>
+					<table>
+						<thead>
+							<tr>
+								<th>药品iD</th>
+								<th>药品名称</th>
+								<th>数量</th>
+								<th>价格</th>
+								<th colspan="2" width="10%">备注</th>
+							</tr>
+						</thead>
+						
+						<tbody>
+							
+							{section name=loop loop=count($News)}
+							<tr>
+							<td>{$News[loop].id}</td>
+							<td>{$News[loop].name}</td>
+							<td>{$News[loop].price}</td>
+							<td>{$News[loop].num}</td>
+							<td>{$News[loop].test}</td>
+							
+							</tr>
+							{sectionelse}
+							对不起，没有任何药品信息！
+							{/section}
+						</tbody>
+					</table>

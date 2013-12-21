@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/repos/esp/!svn/ver/7/trunk/mail_distributor/lib/phpmailer
+END
+class.phpmailer.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/repos/esp/!svn/ver/7/trunk/mail_distributor/lib/phpmailer/class.phpmailer.php
+END
+class.pop3.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/esp/!svn/ver/7/trunk/mail_distributor/lib/phpmailer/class.pop3.php
+END
+class.smtp.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/repos/esp/!svn/ver/7/trunk/mail_distributor/lib/phpmailer/class.smtp.php
+END

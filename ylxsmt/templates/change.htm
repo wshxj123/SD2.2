@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+		<title>预约总览</title>
+		<link rel="stylesheet" href="css/960.css" type="text/css" media="screen" charset="utf-8" />
+		<link rel="stylesheet" href="css/template.css" type="text/css" media="screen" charset="utf-8" />
+		<link rel="stylesheet" href="css/colour.css" type="text/css" media="screen" charset="utf-8" />
+	</head>
+	<body>
+
+		<h1 id="head">用户个人中心</h1>
+
+		<ul id="navigation">
+			<li><a href="user.php">Overview</a></span></li>
+			<li><a href="change_user.php">修改个人资料</a></li>
+			<li><a href="user.php">返回</a></li>
+		</ul>
+		
+		<div id="content" class="container_16 clearfix">
+			<form action="change_user.php" method="POST" >
+				姓 名<input type=text name="name" value="{$name}"></input>
+				电 话<input type=text name="phone" value="{$phone}"></input>
+				邮箱 <input type=text name="email" value="{$email}"></input>
+				年龄 <input type=text name="age" value="{$age}"></input>
+				<input type="submit"></input>
+			</form>
+
+
+		</div>
+
+		
+	</body>
+</html>
